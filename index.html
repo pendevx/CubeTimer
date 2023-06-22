@@ -15,11 +15,17 @@
             <div style="background-color: blue">
                 <div class="info">
                     <ul>
-                        <li><button>Account</button></li>
+                        <li>
+                            <div class="account-card"> <!-- Default should render this unless logged in. -->
+                                <img src="./images/blank-profile.webp" alt="Account image" />
+                                <button class="account-button">Register</button>
+                                <button class="account-button">Log in</button>
+                            </div>
+                        </li>
                         <li>
                             <div class="timesList">
                                 <table>
-                                    <th>Time</th>
+                                    <th>Latest 10 times</th>
                                 </table>
                             </div>
                         </li>
@@ -27,7 +33,7 @@
                     </ul>
                 </div>
             </div>
-            <div style="background-color: red">
+            <div style="background-color: rgb(20, 20, 20)">
                 <div class="timer">
                     <p>0:00.00</p>
                 </div>
