@@ -2,11 +2,18 @@ html {
     background-color: black;
     color: white;
     font-family: monospace;
+    height: 100%;
 }
 
 body {
     overflow: hidden;
-    margin: 0.5% 0.5%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .header {
@@ -14,14 +21,32 @@ body {
     font-size: 3rem;
     border-bottom: 0.2rem solid gray;
     margin-bottom: 1%;
+    display: flex;
+}
+
+.header p {
+    margin: auto;
 }
 
 .layout {
     display: grid;
     grid-template-columns: 2fr 9fr;
+    height: 100%;
 }
 
 .info, .timer {
     height: 100%;
     width: 100%;
+}
+
+.timer {
+    display: flex;
+}
+
+.timer p {
+    margin: auto;
+    font-family: cursive;
+    font-size: 10rem;
+    cursor: default;
+    user-select: none;
 }
