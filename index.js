@@ -6,6 +6,7 @@ let spaceBeingPressed = false;
 let isTiming = false;
 let timerCounter;
 let startTime;
+let spacePressID;
 
 const formatTimeFromMilliseconds = milliseconds => {
     var totalSeconds = Math.floor(milliseconds / 1000);
@@ -47,24 +48,19 @@ window.addEventListener("keypress", e => {
         return;
     }
 
-    // event types:
-    // timer isnt started: start timer, hold 3s then run
-    // timer is started: any press will kill the timer
+    // Space is now being pressed
+    spaceBeingPressed = true;
 
-
-    // timer is started:
-    // check if timer is started
-    // if timer is started then stop the timer
-
+    // Stop the timer if the timer counter is not null (timer is running)
     if (timerCounter) {
         stopTimer();
         return;
     }
-
-    spaceBeingPressed = true;
+    
+    // Set timer color to red
     time.style.color = "red";
 
-    setTimeout(() => {
+    spacePressID = setTimeout(() => {
         if (!spaceBeingPressed) {
             return;
         }
@@ -75,12 +71,14 @@ window.addEventListener("keypress", e => {
 });
 
 window.addEventListener("keyup", e => {
-    if (isTiming) {
-        console.log("ya");
+    time.style.color = "white";
+    
+    if (spacePressID && !isTiming) {
+        clearTimeout(spacePressID);
+    } else if (isTiming) {
         runTimer();
     }
 
-    time.style.color = "white";
     spaceBeingPressed = false;
     isTiming = false;
 });
