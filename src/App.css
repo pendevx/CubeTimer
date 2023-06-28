@@ -1,0 +1,67 @@
+.page-container {
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.account-card {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.account-card * {
+  display: block;
+  margin: 0 auto 5%;
+}
+
+.account-button {
+  display: inline-block;
+}
+
+.account-card img {
+  padding-top: 2%;
+  width: 80%;
+  border-radius: 50%;
+}
+
+.header {
+  text-align: center;
+  font-size: 3rem;
+  border-bottom: 0.2rem solid gray;
+  margin-bottom: 1%;
+  display: flex;
+}
+
+.header p {
+  margin: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 9fr;
+  height: 100%;
+}
+
+.info, .timer {
+  height: 100%;
+  width: 100%;
+}
+
+.timer {
+  display: flex;
+}
+
+.timer p {
+  margin: auto;
+  font-family: cursive;
+  font-size: 10rem;
+  cursor: default;
+  user-select: none;
+}

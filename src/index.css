@@ -1,0 +1,13 @@
+html {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+}
