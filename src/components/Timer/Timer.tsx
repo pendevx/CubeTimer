@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Timer.module.css";
 
 const timerDefault : string = "0:00.00";
 
@@ -101,7 +102,7 @@ function Timer() {
     }, []);
 
     return (
-        <div className="timer">
+        <div className={styles.timer}>
             <p id="time" style={{ color: timerColor }}>{timer}</p>
         </div>
     );
