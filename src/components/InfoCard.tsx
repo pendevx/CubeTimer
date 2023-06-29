@@ -4,7 +4,7 @@ function InfoCard() {
             <ul>
                 <li>
                     <div className="account-card"> { /* Default should render this unless logged in. */}
-                        <img src="./images/blank-profile.webp" alt="Account image" />
+                        <img src="./blank-profile.webp" alt="Account image" />
                         <button className="account-button">Register</button>
                         <button className="account-button">Log in</button>
                     </div>
