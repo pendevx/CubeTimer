@@ -1,6 +1,10 @@
+import styles from "./Scramble.module.css";
+
 function Scramble() {
     return (
-        <p>A B C D E F G H I J K L M N O P</p>
+        <div className={styles.scrambleContainer}>
+            <p className={styles.scrambleText}>A B C D E F G H I J K L M N O P</p>
+        </div>
     );
 }
 
