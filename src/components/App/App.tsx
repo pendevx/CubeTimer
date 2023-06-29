@@ -1,5 +1,5 @@
 import './App.css';
-import { Timer, InfoCard, Scramble } from "./components";
+import { Timer, InfoCard, Scramble } from "../../components";
 
 function App() {
 	return (

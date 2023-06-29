@@ -1,3 +1,4 @@
-export { default as Timer } from "./Timer";
-export { default as InfoCard } from "./InfoCard";
-export { default as Scramble } from "./Scramble";
+export { App } from "./App";
+export { Timer } from "./Timer";
+export { InfoCard } from "./InfoCard";
+export { Scramble } from "./Scramble";
