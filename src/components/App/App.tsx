@@ -1,13 +1,13 @@
-import './App.css';
+import styles from "./App.module.css";
 import { Timer, InfoCard, Scramble } from "../../components";
 
 function App() {
 	return (
-		<div className="page-container">
-			<div className="header">
+		<div className={styles.container}>
+			<div className={styles.header}>
 				<Scramble />
 			</div>
-			<div className="layout">
+			<div className={styles.layout}>
 				<div>
 					<InfoCard />
 				</div>
