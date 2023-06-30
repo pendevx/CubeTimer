@@ -1,0 +1,13 @@
+.timer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.timer p {
+    margin: auto;
+    font-family: cursive;
+    font-size: 10rem;
+    cursor: default;
+    user-select: none;
+}

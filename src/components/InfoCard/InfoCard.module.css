@@ -1,0 +1,30 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.info {
+    list-style-type: none;
+    padding: 0;
+}
+
+.accountCard {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.accountCard * {
+    display: block;
+    margin: 0 auto 5%;
+}
+
+.accountButton {
+    display: inline-block;
+}
+
+.accountCard img {
+    padding-top: 2%;
+    width: 80%;
+    border-radius: 50%;
+}
