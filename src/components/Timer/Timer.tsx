@@ -3,7 +3,11 @@ import styles from "./Timer.module.css";
 
 const timerDefault : string = "0:00.00";
 
-const formatTimeFromMilliseconds = (milliseconds : number) => {
+interface TimerProps {
+    generateScramble(): void;
+}
+
+const formatTimeFromMilliseconds = (milliseconds : number) : string => {
     var totalSeconds = Math.floor(milliseconds / 1000);
     var totalMinutes = Math.floor(totalSeconds / 60);
   
@@ -13,7 +17,7 @@ const formatTimeFromMilliseconds = (milliseconds : number) => {
     return totalMinutes + ':' + remainingSeconds + '.' + remainingMilliseconds;
 }
 
-function Timer() {
+function Timer(props: TimerProps) {
     const [ timer, setTimer ] = React.useState<string>(timerDefault);
     const [ timerColor, setTimerColor ] = React.useState<string>("white");
     
@@ -37,6 +41,8 @@ function Timer() {
             clearInterval(timerCounter);
             timerCounter = NaN;
         }
+
+        props.generateScramble();
     }
 
     React.useEffect(() => {

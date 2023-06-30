@@ -1,9 +1,13 @@
 import styles from "./Scramble.module.css";
 
-function Scramble() {
+interface ScrambleProps {
+    scramble: string;
+}
+
+function Scramble(props: ScrambleProps) {
     return (
         <div className={styles.scrambleContainer}>
-            <p className={styles.scrambleText}>A B C D E F G H I J K L M N O P</p>
+            <p className={styles.scrambleText}>{props.scramble}</p>
         </div>
     );
 }
