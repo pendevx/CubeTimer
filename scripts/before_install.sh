@@ -22,5 +22,5 @@ else
 fi
 
 if [ ! -x /usr/sbin/nginx ]; then
-    apt-get install nginx
+    apt-get install -y nginx
 fi
