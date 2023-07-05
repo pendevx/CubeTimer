@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH="/var/www/html"
+PATH=/var/www/html
 
 apt update
 
@@ -8,7 +8,7 @@ if [ -d "$PATH" ]; then
     cd $PATH
     rm -rf *
 else 
-    mkdir $PATH
+    mkdir /var/www/html
     cd $PATH
 fi
 
