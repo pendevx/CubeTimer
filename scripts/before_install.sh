@@ -3,6 +3,8 @@
 PATH=/var/www/html
 
 apt update
+apt-get update
+apt-get install -y curl
 
 if [ -d "$PATH" ]; then
     cd $PATH
