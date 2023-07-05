@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ! -d "$HOME/server" ]; then
+if [ ! -d "/home/ubuntu/server" ]; then
     echo "Creating 'server' directory..."
-    mkdir "$HOME/server"
+    mkdir "/home/ubuntu/server"
     echo "'server' directory creation complete..."
 else
     echo "'server' directory already exists..."
@@ -14,7 +14,7 @@ then
 else
     echo "Installing Node..."
 
-    cd $HOME/server
+    cd /home/ubuntu/server
     curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     apt-get install -y nodejs
 

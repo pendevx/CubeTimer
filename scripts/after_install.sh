@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $HOME/server
+cd /home/ubuntu/server
 npm i
