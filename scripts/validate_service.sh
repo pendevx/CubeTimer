@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nginx_status = $(systemctl is-active nginx)
+nginx_status=$(systemctl is-active nginx)
 
 if [[ $nginx_status == "active" ]]; then 
     echo "Nginx is running."
