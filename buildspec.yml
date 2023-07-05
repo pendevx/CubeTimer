@@ -9,5 +9,5 @@ phases:
       npm run build
 artifacts:
   files:
-    - "**/*"
+    - "dist/**/*"
   name: cubetimer-web-artifacts
