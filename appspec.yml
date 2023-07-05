@@ -6,7 +6,7 @@ files:
 hooks:
   ApplicationStop:
     - location: scripts/stop_application.sh
-    runas: root
+      runas: root
 
   BeforeInstall:
     - location: scripts/before_install.sh
