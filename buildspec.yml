@@ -11,4 +11,5 @@ artifacts:
   files:
     - "dist/**/*"
     - "scripts/**/*"
+    - "appspec.yml"
   name: cubetimer-web-artifacts
