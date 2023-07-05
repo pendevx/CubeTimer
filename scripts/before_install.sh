@@ -1,30 +1,17 @@
 #!/bin/bash
 
-PATH=/var/www/html
+htmlPath=/var/www/html
 
 apt update
 apt-get update
 apt-get install -y curl
 
-if [ -d "$PATH" ]; then
-    cd $PATH
+if [ -d "$htmlPath" ]; then
+    cd $htmlPath
     rm -rf *
 else 
     mkdir /var/www/html
-    cd $PATH
-fi
-
-if which node > /dev/null 
-then
-    echo "Node is installed, skipping..."
-else
-    echo "Installing Node..."
-
-    cd $PATH
-    curl -sL https://deb.nodesource.com/setup_18.x | -E bash -
-    apt-get install -y nodejs
-
-    echo "Node installation complete."
+    cd $htmlPath
 fi
 
 if ! which nginx > /dev/null 2>&1; then
