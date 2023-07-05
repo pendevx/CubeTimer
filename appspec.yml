@@ -2,10 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: dist
-    destination: /home/ubuntu/server
+    destination: /var/www/html
 hooks:
-  #ApplicationStop:
-  
+  ApplicationStop:
+    - location: scripts/stop_application.sh
+    runas: root
+
   BeforeInstall:
     - location: scripts/before_install.sh
       runas: root

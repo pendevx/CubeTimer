@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd /home/ubuntu/server
+systemctl restart nginx
