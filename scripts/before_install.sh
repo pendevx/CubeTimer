@@ -25,6 +25,6 @@ else
     echo "Node installation complete."
 fi
 
-if [ ! -x /usr/sbin/nginx ]; then
-    apt-get install -y nginx
+if ! which nginx > /dev/null 2>&1; then
+    apt-get install -y nginx;
 fi
