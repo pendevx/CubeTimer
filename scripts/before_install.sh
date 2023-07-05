@@ -4,8 +4,13 @@ PATH="/var/www/html"
 
 apt update
 
-cd $PATH
-rm -rf *
+if [ -d "$PATH" ]; then
+    cd $PATH
+    rm -rf *
+else 
+    mkdir $PATH
+    cd $PATH
+fi
 
 if which node > /dev/null 
 then
