@@ -19,7 +19,7 @@ else
     echo "Installing Node..."
 
     cd $PATH
-    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_18.x | -E bash -
     apt-get install -y nodejs
 
     echo "Node installation complete."
