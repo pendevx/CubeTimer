@@ -1,0 +1,29 @@
+.container * {
+    display: inline-block;
+    border: none;
+    background-color: #252525;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.5% 2%;
+    margin: 0 0.5%;
+}
+
+.switchButton {
+    transition: ease .4s;
+    white-space: nowrap;
+}
+
+.switchButton:hover {
+    background-color: #474747;
+}
+
+.scrambleSelector {
+    transition: ease .4s;
+}
+
+.scrambleSelector:hover {
+    background-color: #474747;
+}
