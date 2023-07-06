@@ -3,6 +3,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 7fr;
+    margin: 1% 2%;
 }
 
 .header {
