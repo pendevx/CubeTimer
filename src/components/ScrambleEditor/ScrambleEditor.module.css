@@ -1,14 +1,20 @@
+.container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .container * {
     display: inline-block;
     border: none;
     background-color: #252525;
     color: white;
     text-align: center;
-    border-radius: 10px;
     cursor: pointer;
     user-select: none;
     padding: 0.5% 2%;
     margin: 0 0.5%;
+    width: 100%;
 }
 
 .switchButton {

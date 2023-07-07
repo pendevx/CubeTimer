@@ -4,8 +4,35 @@
     text-align: center;
     font-size: 3rem;
     margin-bottom: 1%;
+    position: relative;
+    display: flex;
 }
 
 .scrambleText {
     margin: auto;
+    transform: translateY(-50%);
+}
+
+.toggleButton {
+    height: 14%;
+    /* margin: 1% 1% 0 0; */
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: rgba(41, 41, 41, 0.555);
+    border: none;
+    border-radius: 10px;
+}
+
+.toggleButton img {
+    height: 100%;
+    width: 100%;
+}
+
+.toggleButton:hover {
+    background: rgba(17, 17, 17, 0.555);
+}
+
+.settingsDropdown {
+    position: relative;
 }
