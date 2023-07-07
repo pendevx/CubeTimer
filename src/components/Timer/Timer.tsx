@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./Timer.module.css";
+import { ScrambleEditor } from "../ScrambleEditor";
 
 const timerDefault : string = "0:00.00";
 
 interface TimerProps {
     generateScramble(): void;
+    showScrambleSettings: boolean;
+    setScrambleType(type: string): void;
 }
 
 const formatTimeFromMilliseconds = (milliseconds : number) : string => {
@@ -107,11 +110,12 @@ function Timer(props: TimerProps) {
         }
     }, []);
 
-    return (
+    return (<>
         <div className={styles.timer}>
             <p id="time" style={{ color: timerColor }}>{timer}</p>
+            { props.showScrambleSettings && <ScrambleEditor switchScramble={() => props.generateScramble()} setScrambleType={props.setScrambleType} /> }
         </div>
-    );
+    </>);
 }
 
 export default Timer;
