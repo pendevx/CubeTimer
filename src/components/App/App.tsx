@@ -48,12 +48,12 @@ const getFontSize = (scrambleType : string) : string => {
 }
 
 function App() {
-    const [ scrambleFont, setScrambleFont ] = React.useState<string>("3rem");
+    const [ showSettings, setShowSettings ] = React.useState<boolean>(false);
     const [ scramble, setScramble ] = React.useState<string>(generateScramble());
 
     const handleGenerateScramble = () => {
         setScramble(generateScramble());
-        setScrambleFont(getFontSize(scrambleGenerator.type()));
+        // setScrambleFont(getFontSize(scrambleGenerator.type()));
     }
 
     const handleScrambleTypeChange = (type : string) => {
@@ -66,11 +66,12 @@ function App() {
 	return (
 		<div className={styles.container}>
             <div>
-                <Timer generateScramble={handleGenerateScramble} />
+                <Timer generateScramble={handleGenerateScramble}
+                    showScrambleSettings={showSettings}
+                    setScrambleType={type => handleScrambleTypeChange(type)} />
             </div>
             <Scramble scramble={scramble}
-                switchScramble={() => handleGenerateScramble()}
-                setScrambleType={type => handleScrambleTypeChange(type)}/>
+                flipShowScrambleSettings={() => setShowSettings(!showSettings)}/>
 		</div>
 	);
 }
