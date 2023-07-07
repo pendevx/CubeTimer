@@ -65,20 +65,12 @@ function App() {
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.header}>
-				<Scramble scramble={scramble}
-                    switchScramble={() => handleGenerateScramble()}
-                    setScrambleType={type => handleScrambleTypeChange(type)}
-                    fontSize={scrambleFont} />
-			</div>
-			<div className={styles.layout}>
-				<div>
-					<InfoCard />
-				</div>
-				<div>
-					<Timer generateScramble={() => handleGenerateScramble()} />
-				</div>
-			</div>
+            <div>
+                <Timer generateScramble={handleGenerateScramble} />
+            </div>
+            <Scramble scramble={scramble}
+                switchScramble={() => handleGenerateScramble()}
+                setScrambleType={type => handleScrambleTypeChange(type)}/>
 		</div>
 	);
 }

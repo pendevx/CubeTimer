@@ -1,18 +1,8 @@
 .container {
     overflow: hidden;
     height: 100%;
-    display: grid;
-    grid-template-rows: 1fr 7fr;
     margin: 1% 2%;
-}
 
-.header {
-    border-bottom: 0.2rem solid gray;
-    margin-bottom: 1%;
-}
-
-.layout {
     display: grid;
-    grid-template-columns: 2fr 9fr;
-    height: 100%;
+    grid-template-rows: 2.4fr 1fr;
 }
