@@ -35,25 +35,12 @@ const generateScramble = () : string => {
     return scrambleGenerator.get(1)[0];
 }
 
-const getFontSize = (scrambleType : string) : string => {
-    switch (scrambleType) {
-        case "333": return "3rem";
-        case "444":
-        case "555": return "2.6rem";
-        case "666": return "2rem";
-        case "777": return "1.8rem";
-    }
-
-    return "";
-}
-
 function App() {
     const [ showSettings, setShowSettings ] = React.useState<boolean>(false);
     const [ scramble, setScramble ] = React.useState<string>(generateScramble());
 
     const handleGenerateScramble = () => {
         setScramble(generateScramble());
-        // setScrambleFont(getFontSize(scrambleGenerator.type()));
     }
 
     const handleScrambleTypeChange = (type : string) => {
