@@ -10,7 +10,6 @@
 
 .scrambleText {
     margin: auto;
-    transform: translateY(-50%);
 }
 
 .toggleButton {
@@ -22,6 +21,7 @@
     background-color: rgba(41, 41, 41, 0.555);
     border: none;
     border-radius: 10px;
+    display: flex;
 }
 
 .toggleButton img {
@@ -31,8 +31,4 @@
 
 .toggleButton:hover {
     background: rgba(17, 17, 17, 0.555);
-}
-
-.settingsDropdown {
-    position: relative;
 }
