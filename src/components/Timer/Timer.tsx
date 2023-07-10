@@ -2,13 +2,15 @@ import React from "react";
 import styles from "./Timer.module.css";
 import { ScrambleEditor } from "../ScrambleEditor";
 
-const timerDefault : string = "0:00.00";
+const timerDefault = "0:00.00";
 
 interface TimerProps {
     generateScramble(): void;
     showScrambleSettings: boolean;
     setScrambleType(type: string): void;
 }
+
+type TimerColor = "white" | "red" | "green";
 
 const formatTimeFromMilliseconds = (milliseconds : number) : string => {
     var totalSeconds = Math.floor(milliseconds / 1000);
@@ -22,7 +24,7 @@ const formatTimeFromMilliseconds = (milliseconds : number) : string => {
 
 function Timer(props: TimerProps) {
     const [ timer, setTimer ] = React.useState<string>(timerDefault);
-    const [ timerColor, setTimerColor ] = React.useState<string>("white");
+    const [ timerColor, setTimerColor ] = React.useState<TimerColor>("white");
     
     let startTime : number;
     let timerCounter : number;
