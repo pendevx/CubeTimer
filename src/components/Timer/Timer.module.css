@@ -11,6 +11,11 @@
 
 .timer button {
     border: none;
+    transition: 0.2s ease;
+}
+
+.timer button:hover {
+    background-color: rgb(212, 212, 212);
 }
 
 .helpButton {
