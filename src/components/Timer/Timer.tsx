@@ -25,6 +25,7 @@ const formatTimeFromMilliseconds = (milliseconds: number): string => {
 function Timer(props: TimerProps) {
     const [timer, setTimer] = React.useState<string>(timerDefault);
     const [timerColor, setTimerColor] = React.useState<TimerColor>("white");
+    const [ selected, setSelected ] = React.useState<number>(3);
 
     let startTime: number;
     let timerCounter: number;
@@ -131,7 +132,8 @@ function Timer(props: TimerProps) {
 
             <p id="time" style={{ color: timerColor }}>{timer}</p>
 
-            {props.showScrambleSettings && <ScrambleEditor switchScramble={() => props.generateScramble()} setScrambleType={props.setScrambleType} />}
+            {props.showScrambleSettings && <ScrambleEditor switchScramble={() => props.generateScramble()} setScrambleType={props.setScrambleType} 
+                selected={selected} setSelected={setSelected} />}
         </div>
     </>);
 }
