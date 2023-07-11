@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import { Timer, InfoCard, Scramble } from "../../components";
+import { Timer, Scramble } from "../../components";
 import Scrambo from "scrambo";
 import React from "react";
 
