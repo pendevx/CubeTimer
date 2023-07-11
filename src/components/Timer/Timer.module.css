@@ -5,6 +5,44 @@
     position: relative;
 }
 
+.timer > :not(p) {
+    position: absolute;
+}
+
+.timer button {
+    border: none;
+}
+
+.helpButton {
+    top: 0;
+    right: 0;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.helpButton img {
+    height: 100%;
+    width: 100%;
+}
+
+.functionality {
+    list-style-type: none;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.functionality button {
+    height: 6rem;
+}
+
+.functionality button img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
 .timer p {
     margin: auto;
     font-family: cursive;
