@@ -45,7 +45,7 @@ function ScrambleEditor(props : ScrambleEditorProps) {
             <select className={styles.scrambleSelector} onChange={e => handleScrambleTypeChange(e)} ref={selectRef}>
                 {
                     scrambleTypes.map(x => (
-                        <option key={x}>{`${x}x${x}`}</option>
+                        <option key={x} disabled={x === props.selected}>{`${x}x${x}`}</option>
                     ))
                 }
             </select>
