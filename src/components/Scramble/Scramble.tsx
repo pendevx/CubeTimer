@@ -1,19 +1,27 @@
+import React from "react";
 import styles from "./Scramble.module.css";
-import { ScrambleEditor } from "../ScrambleEditor";
-import { ScrambleEditorProps } from "../ScrambleEditor";
 
-interface ScrambleProps extends ScrambleEditorProps {
+interface ScrambleProps {
     scramble: string;
-    fontSize: string;
+    flipShowScrambleSettings(): void;
 }
 
 function Scramble(props: ScrambleProps) {
-    return (
-        <div className={styles.scrambleContainer}>
-            <p className={styles.scrambleText} style={{fontSize:`${props.fontSize}`}}>{props.scramble}</p>
-            <ScrambleEditor switchScramble={props.switchScramble} setScrambleType={props.setScrambleType} />
+    const buttonRef = React.createRef<HTMLButtonElement>();
+
+    const handleShowSettings = () : void => {
+        props.flipShowScrambleSettings();
+        buttonRef.current?.blur();
+    }
+
+    return (<>
+        <div className={styles.scrambleContainer} style={{backgroundColor:"#555555"}}>
+            <p className={styles.scrambleText}>{props.scramble}</p>
+            <button className={styles.toggleButton} onClick={handleShowSettings} ref={buttonRef} >
+                <img src="/toggle-button.webp"></img>
+            </button>
         </div>
-    );
+    </>);
 }
 
 export default Scramble;
