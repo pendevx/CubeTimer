@@ -14,15 +14,20 @@
     transition: 0.2s ease;
 }
 
-.timer button:hover {
+.functionality button:hover {
     background-color: rgb(212, 212, 212);
 }
 
 .helpButton {
     top: 0;
     right: 0;
-    height: 8rem;
+    height: 6rem;
     border-radius: 50%;
+    background-color: rgb(190, 190, 190);
+}
+
+.helpButton:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 .helpButton img {
