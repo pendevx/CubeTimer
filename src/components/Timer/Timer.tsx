@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Timer.module.css";
 import { ScrambleEditor } from "../ScrambleEditor";
+import { Accounts, InfoCard, Settings, TimeList } from "..";
 
 const timerDefault = "0:00.00";
 
@@ -26,6 +27,9 @@ function Timer(props: TimerProps) {
     const [timer, setTimer] = React.useState<string>(timerDefault);
     const [timerColor, setTimerColor] = React.useState<TimerColor>("white");
     const [ selected, setSelected ] = React.useState<number>(3);
+    const [ showAccounts, setShowAccounts ] = React.useState<boolean>(false);
+    const [ showSettings, setShowSettings ] = React.useState<boolean>(false);
+    const [ showTimes, setShowTimes ] = React.useState<boolean>(false);
 
     let startTime: number;
     let timerCounter: number;
@@ -118,12 +122,38 @@ function Timer(props: TimerProps) {
 
     const accImg = "/blank-profile.webp";
 
+    const closeActive = () : void => {
+        if (showAccounts) {
+            return setShowAccounts(false);
+        } else if (showSettings) {
+            return setShowSettings(false);
+        } else if (showTimes) {
+            return setShowTimes(false);
+        }
+    }
+
+    const detectActive = () : JSX.Element => {
+        if (showAccounts) {
+            return <Accounts />;
+        } else if (showSettings) {
+            return <Settings />;
+        } else if (showTimes) {
+            return <TimeList />;
+        }
+
+        return <></>;
+    }
+
+    const infocard = showSettings || showAccounts || showTimes ? 
+        <InfoCard close={closeActive}>{detectActive()}</InfoCard> : 
+        <></>;
+
     return (<>
-        <div className={`timerContainer ${styles.timer}`}>
+        <div className={styles.timer}>
             <ul className={styles.functionality}>
-                <li><button><img src="/settings.webp" alt="Settings" /></button></li>
-                <li><button><img src={accImg} alt="accounts" /></button></li>
-                <li><button><img src="/timer.webp" alt="times" /></button></li>
+                <li><button onClick={() => setShowSettings(true)}><img src="/settings.webp" alt="Settings" /></button></li>
+                <li><button onClick={() => setShowAccounts(true)}><img src={accImg} alt="accounts" /></button></li>
+                <li><button onClick={() => setShowTimes(true)}><img src="/timer.webp" alt="times" /></button></li>
             </ul>
 
             <button className={styles.helpButton}>
@@ -135,6 +165,7 @@ function Timer(props: TimerProps) {
             {props.showScrambleSettings && <ScrambleEditor switchScramble={() => props.generateScramble()} setScrambleType={props.setScrambleType} 
                 selected={selected} setSelected={setSelected} />}
         </div>
+        { infocard }
     </>);
 }
 
