@@ -10,7 +10,7 @@ function InfoCard({ close, children } : InfoCardProps) {
         <div className={styles.container}>
             <div className={styles.infocard}>
                 {children}
-                <button className={styles.closeButton} onClick={close}></button>
+                <button className={styles.closeButton} onClick={close}>✖</button>
             </div>
         </div>
     );

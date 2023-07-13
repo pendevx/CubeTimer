@@ -20,4 +20,12 @@
     position: absolute;
     top: 0;
     right: 0;
+    border: none;
+    font-size: 1.2rem;
+    background-color: rgb(107, 107, 107);
+    transition: 0.3s;
+}
+
+.closeButton:hover {
+    background-color: rgb(148, 148, 148);
 }
