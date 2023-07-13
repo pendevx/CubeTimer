@@ -1,25 +1,17 @@
 import styles from "./InfoCard.module.css";
 
-function InfoCard() {
+interface InfoCardProps {
+    children: JSX.Element[] | JSX.Element;
+    close: () => void;
+}
+
+function InfoCard({ close, children } : InfoCardProps) {
     return (
         <div className={styles.container}>
-            <ul className={styles.info}>
-                <li>
-                    <div className={styles.accountCard}> { /* Default should render this unless logged in. */}
-                        <img src="./blank-profile.webp" alt="Account image" />
-                        <button className={styles.accountButton}>Register</button>
-                        <button className={styles.accountButton}>Log in</button>
-                    </div>
-                </li>
-                <li>
-                    <div className={styles.timesList}>
-                        <table>
-                            <th>Latest 10 times</th>
-                        </table>
-                    </div>
-                </li>
-                <li><button>View all times</button></li>
-            </ul>
+            <div className={styles.infocard}>
+                {children}
+                <button className={styles.closeButton} onClick={close}></button>
+            </div>
         </div>
     );
 }
