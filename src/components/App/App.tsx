@@ -2,6 +2,7 @@ import styles from "./App.module.css";
 import { Timer, Scramble } from "../../components";
 import Scrambo from "scrambo";
 import React from "react";
+import { AccountContext } from "../../../contexts";
 
 const scrambleGenerator = new Scrambo();
 
@@ -51,15 +52,17 @@ function App() {
     }
 
 	return (
-		<div className={styles.container}>
-            <div>
-                <Timer generateScramble={handleGenerateScramble}
-                    showScrambleSettings={showSettings}
-                    setScrambleType={type => handleScrambleTypeChange(type)} />
+        <AccountContext>
+            <div className={styles.container}>
+                <div>
+                    <Timer generateScramble={handleGenerateScramble}
+                        showScrambleSettings={showSettings}
+                        setScrambleType={type => handleScrambleTypeChange(type)} />
+                </div>
+                <Scramble scramble={scramble}
+                    flipShowScrambleSettings={() => setShowSettings(!showSettings)}/>
             </div>
-            <Scramble scramble={scramble}
-                flipShowScrambleSettings={() => setShowSettings(!showSettings)}/>
-		</div>
+        </AccountContext>
 	);
 }
 
