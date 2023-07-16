@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Timer.module.css";
 import { ScrambleEditor } from "../ScrambleEditor";
+import { Help } from "../Help";
 
 const timerDefault = "0:00.00";
 
@@ -26,6 +27,7 @@ function Timer(props: TimerProps) {
     const [timer, setTimer] = React.useState<string>(timerDefault);
     const [timerColor, setTimerColor] = React.useState<TimerColor>("white");
     const [ selected, setSelected ] = React.useState<number>(3);
+    const [ showHelp, setShowHelp ] = React.useState<boolean>(false);
 
     let startTime: number;
     let timerCounter: number;
@@ -126,7 +128,7 @@ function Timer(props: TimerProps) {
                 <li><button><img src="/timer.webp" alt="times" /></button></li>
             </ul>
 
-            <button className={styles.helpButton}>
+            <button className={styles.helpButton} onClick={() => setShowHelp(true)}>
                 <img src="/help-icon.webp" alt="help" />
             </button>
 
@@ -134,6 +136,8 @@ function Timer(props: TimerProps) {
 
             {props.showScrambleSettings && <ScrambleEditor switchScramble={() => props.generateScramble()} setScrambleType={props.setScrambleType} 
                 selected={selected} setSelected={setSelected} />}
+
+            {showHelp && <Help close={() => setShowHelp(false)} />}
         </div>
     </>);
 }
