@@ -16,6 +16,28 @@ interface UserRegisterDetails {
 }
 
 async function register({ username, password, name, email } : UserRegisterDetails) {
+    // const ses = new SESClient({
+    //     credentials: {
+    //         accessKeyId: import.meta.env.VITE_COGNITO_ACCESS_KEY_ID,
+    //         secretAccessKey: import.meta.env.VITE_COGNITO_SECRET_ACCESS_KEY
+    //     },
+    //     region: "us-east-1"
+    // });
+
+    // var sesparams : VerifyEmailAddressCommandInput = {
+    //     EmailAddress: "test@test.com"
+    // };
+
+    // const sescommand = new VerifyEmailIdentityCommand(sesparams);
+    // const sesRes = await ses.send(sescommand);
+
+    // console.log(sesRes);
+
+
+
+
+
+
     const params : SignUpRequest = {
         ClientId: import.meta.env.VITE_COGNITO_CLIENT_ID,
         Username: username,
