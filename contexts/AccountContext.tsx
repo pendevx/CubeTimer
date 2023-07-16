@@ -4,7 +4,16 @@ interface AccountContextProps {
     children? : JSX.Element | JSX.Element[];
 }
 
-const Context = React.createContext({});
+interface AccountContextType {
+    username: string;
+    setUsername: (val: string) => void;
+    name: string;
+    setName: (val: string) => void;
+    email: string;
+    setEmail: (val: string) => void;
+}
+
+const Context = React.createContext<AccountContextType | null>(null);
 
 export function AccountContext({ children } : AccountContextProps) {
     const [ username, setUsername ] = React.useState<string>("");
