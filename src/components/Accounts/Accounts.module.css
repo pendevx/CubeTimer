@@ -1,1 +1,21 @@
+.container {
+    margin: auto;
+    display: flex;
+    padding: 3%;
+    flex-direction: column;
+}
 
+.container * {
+    margin: 2% 0;
+}
+
+.container img {
+    margin: auto;
+    width: 50%;
+    border-radius: 50%;
+}
+
+.registerForm * {
+    display: block;
+    width: 100%;
+}
