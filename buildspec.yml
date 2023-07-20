@@ -9,7 +9,6 @@ phases:
       npm run build
 artifacts:
   files:
-    - "dist/**/*"
-    - "scripts/**/*"
-    - "appspec.yml"
+    - "**/*"
+  base-directory: "dist"
   name: cubetimer-web-artifacts
