@@ -1,0 +1,7 @@
+.switch {
+    text-decoration: underline;
+}
+
+.switch:hover {
+    cursor: pointer;
+}
