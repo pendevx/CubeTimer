@@ -1,6 +1,8 @@
 import { InitiateAuthCommandOutput } from "@aws-sdk/client-cognito-identity-provider";
 import React from "react";
 
+export type EmailString = `${string}@${string}.${string}`;
+
 interface AccountContextProps {
     children? : JSX.Element | JSX.Element[];
 }
@@ -8,8 +10,8 @@ interface AccountContextProps {
 interface AccountContextType {
     isLoggedIn: boolean;
     username: string;
-    name: string;
-    email: string;
+    nickname: string;
+    email: EmailString;
     login: (details: ILoginDetails) => void;
     register: (details: IRegisterDetails) => void;
 }
@@ -22,16 +24,16 @@ interface ILoginDetails {
 interface IRegisterDetails {
     username: string;
     password: string;
-    email: `${string}@${string}.${string}`;
-    name: string;
+    email: EmailString;
+    nickname: string;
 }
 
 const Context = React.createContext<AccountContextType | null>(null);
 
 export function AccountContext({ children } : AccountContextProps) {
     const [ username, setUsername ] = React.useState<string>("");
-    const [ name, setName ] = React.useState<string>("");
-    const [ email, setEmail ] = React.useState<string>("");
+    const [ nickname, setNickname ] = React.useState<string>("");
+    const [ email, setEmail ] = React.useState<EmailString>("example@example.com");
     const [ isLoggedIn, setIsLoggedIn ] = React.useState<boolean>(false);
 
     const login = async ({ username, password } : ILoginDetails): Promise<void> => {
@@ -51,8 +53,8 @@ export function AccountContext({ children } : AccountContextProps) {
 
     }
 
-    const register = async ({ username, password, email, name } : IRegisterDetails) => {
-        console.log(username, password, email, name);
+    const register = async ({ username, password, email, nickname } : IRegisterDetails) => {
+        console.log(username, password, email, nickname);
         
         // TODO
     }
@@ -61,7 +63,7 @@ export function AccountContext({ children } : AccountContextProps) {
         <Context.Provider value={{
             isLoggedIn,
             username,
-            name,
+            nickname,
             email,
             login,
             register
