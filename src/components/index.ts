@@ -6,3 +6,6 @@ export { ScrambleEditor } from "./ScrambleEditor";
 export { Accounts } from "./Accounts";
 export { TimeList } from "./TimeList";
 export { Settings } from "./Settings";
+export { Login } from "./Login";
+export { AccountDetails } from "./AccountDetails";
+export { Register } from "./Register";
