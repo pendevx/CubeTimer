@@ -12,6 +12,10 @@ function Login(props: IUnauthorizedAction) {
     const accCtx = useAccountContext();
 
     const login = async () => {
+        if (infoText) {
+            setInfoText("");
+        }
+        
         if (!username) {
             setInfoText("Please enter a valid username!");
             return;
@@ -43,10 +47,6 @@ function Login(props: IUnauthorizedAction) {
                 const n: never = type;
                 n;
             }
-        }
-
-        if (infoText) {
-            setInfoText("");
         }
     }
 
